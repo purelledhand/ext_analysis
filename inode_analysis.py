@@ -21,3 +21,6 @@ print("blocks_per_group : ", hex(blocks_per_group), blocks_per_group)
 
 print("ngroups(by block) : ", math.ceil(total_block/blocks_per_group))
 print("ngroups(by Inode) : ", math.ceil(total_inode/inodes_per_group))
+
+block_size = struct.unpack_from("<I", sp, 0x18)[0]
+print("block_size : ", pow(2, 10+block_size))
